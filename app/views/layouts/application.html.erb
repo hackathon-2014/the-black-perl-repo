@@ -4,16 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title>Practice</title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+    <div class="container">
+      <%= yield %>
+    </div>
 
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+      
   </body>
 </html>
