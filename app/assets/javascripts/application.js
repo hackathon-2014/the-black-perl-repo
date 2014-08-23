@@ -15,3 +15,18 @@
 //= require bootstrap
 //= require_tree .
 
+var signInRetrunSuccess;
+var signInReturnAlert;
+
+$(document).ready(function (){
+
+    if ($('.signInReturnSuccess').text() === ""){
+        $('.signInReturnSuccess').closest('.alert').toggleClass('hidden');
+    };
+
+    if ($('.signInReturnAlert').text() === ""){
+        $('.signInReturnAlert').closest('.alert').toggleClass('hidden');
+    };
+
+
+});
