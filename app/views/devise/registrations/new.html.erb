@@ -14,7 +14,7 @@
 
   <div>
       <%= f.label :group_id %>
-      <%= f.select :group_id, options_for_select( all_groups.collect {|group| [group.name]} ) %>  
+      <%= f.select :group_id, options_for_select( all_groups.collect {|group| [group.name]} ) %>
   </div>
 
   <div><%= f.submit "Sign up" %></div>
@@ -23,4 +23,4 @@
 <%= render "devise/shared/links" %>
 
 
-    
+

@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-groups = Group.create([{ name: 'Oak Terrace Preserve' }, { name: 'Tanner Plantation'}, { name: 'Wagener Terrace'}, { name: 'Byrnes Down'}, { name: 'Riverland Terrace'}])
+groups = Group.create([{ name: 'Oak Terrace Preserve', user_id: 0 }, { name: 'Tanner Plantation', user_id: 0}, { name: 'Wagener Terrace', user_id: 1}, { name: 'Byrnes Down', user_id: 1}, { name: 'Riverland Terrace', user_id: 0}])
 
 
 groups.each do |group|
