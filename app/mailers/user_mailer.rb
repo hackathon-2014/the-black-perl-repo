@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "admin@t00lshed.com"
 
   def invite_emails(list, group)
     list.each do |recipient|
@@ -19,6 +19,6 @@ class UserMailer < ActionMailer::Base
     @group = Group.find(@sender.group_id)
     @tool = Tool.find(rental.tool_id)
     @url  = "http://t00lshed.herokuapp.com/group/" + @group.id.to_s + "users/" + @recipient.id.to_s + "/tools/" + @tool.id.to_s + "/rentals/" + rental.id.to_s
-    mail(to: @recipient.email, from: @sender.email, subject: 'Rental Request from' + @sender.name)
+    mail(to: @recipient.email, subject: 'Rental Request from' + @sender.name)
   end
 end
