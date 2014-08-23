@@ -1,26 +1,24 @@
 class GroupsController < ApplicationController
   before_action(:find_group, only: [:show, :edit, :update, :destroy])
 
-  def index
-    @groups = Group.all
-  end
-
   def new
     @group = Group.new
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = Group.new({name: params[:name]})
+    @group.user_id = current_user.id #owner/admin
     if @group.save
       flash[:notice] = 'Group was successfully created.'
-      redirect_to :action => 'index'
+      redirect_to group_path(@group)
     else
       render :action => 'new'
     end
+
   end
 
   def show
-
+    @admin = User.find(@group.user_id)
   end
 
   def edit
@@ -28,7 +26,7 @@ class GroupsController < ApplicationController
   end
 
   def update
-    if @recipe.update_attributes(group_params)
+    if @group.update_attributes({name: params[:name]})
       flash[:notice] = 'Group was successfully updated.'
       redirect_to :action => 'show', :id => @group
     else
@@ -38,14 +36,11 @@ class GroupsController < ApplicationController
 
   def destroy
     @group.destroy
-    redirect_to :action => :index
+    flash[:notice] = 'Group was successfully deleted.'
+    redirect_to root_path
   end
 
   private
-
-  def group_params
-    params.require(:group).permit(:name)
-  end
 
   def find_group
     @group = Group.find(params[:id])
