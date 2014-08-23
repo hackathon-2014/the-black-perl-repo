@@ -12,27 +12,23 @@
   </head>
 
   <body>
+   <div>
+        <div class="alertBoxContainer col-xs-12">
+            <div class="alert alert-success alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <p class="signInReturnSuccess"><%= notice %></p>
+            </div>
+
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <p class="signInReturnAlert"><%= alert %></p>
+            </div>
+        </div>
 
 
-  <div class="alert alert-success alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-    <p><%= notice %></p>
-  </div>
+    <%= yield %>
+   </div>
 
-    <div class="alert alert-danger alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      <p><%= alert %></p>
-    </div>
 
-   <!-- <div class="container">
-        <div class="alertContainer col-xs-12">
-            <p class="alert alert-success"><%= notice %></p>
-            <p class="alert alert-danger"><%= alert %></p>
-        </div> -->
-
-      <%= yield %>
-    </div>
-
-      
   </body>
 </html>
