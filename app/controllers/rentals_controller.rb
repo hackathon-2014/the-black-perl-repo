@@ -15,6 +15,7 @@ class RentalsController < ApplicationController
       })
     if @rental.save
       UserMailer.rental_request_email(@rental,current_user).deliver
+      flash[:notice] = 'Rental was successfully requested.'
       redirect_to root_path
     else
       render :new
