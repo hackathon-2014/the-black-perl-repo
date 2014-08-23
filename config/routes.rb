@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   end
 
-  resources :reservations
+  resources :rentals
 
 
 
