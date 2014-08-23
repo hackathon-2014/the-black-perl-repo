@@ -24,9 +24,12 @@
     <% end %>
   </ul>
 
-  <%= button_to "Add a Tool", new_group_user_tool_path(@group, current_user) %>
+  <%= link_to "Add a Tool", new_group_user_tool_path(@group, current_user), :method => "get" %>
   <h2>Group Tools:</h2>
   <ul>
+    <% @tools.each do |tool| %>
+      <li><%= tool.name %></li>
+    <% end %>
   </ul>
 
 <% end %>

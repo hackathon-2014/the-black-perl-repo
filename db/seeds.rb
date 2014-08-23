@@ -33,3 +33,13 @@ groups.each do |group|
     end
   end
 end
+
+
+
+# groups.each do |group|
+#   group.users.each do |user|
+#     for i in 0..rand(1..7)
+#       Tool.create(name: , user_id: user.id, category_id: )
+#   end
+# end
+>>>>>>> ea78b8dc5bcd6e4d750922ac328726c09bb610b7
