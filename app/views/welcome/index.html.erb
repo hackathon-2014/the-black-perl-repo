@@ -32,6 +32,9 @@
     <% end %>
 
   </ul>
+<% else %>
+  <%= link_to 'Register', new_user_registration_path %>
+  <%= link_to "Log in", new_session_path(resource_name) %>
 
 <% end %>
  </div>
