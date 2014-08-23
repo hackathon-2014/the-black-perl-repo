@@ -31,6 +31,7 @@ gem 'rails_12factor', group: :production
 
 gem 'devise'
 gem "cancan"
+gem 'workflow'
 
 # ruby "2.1.1"
 
