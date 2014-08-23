@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
 
+  skip_before_action :authenticate_user!
+
+
   # skip_before_action :authenticate_user!
   def index
     @group = Group.find(current_user.group_id)
@@ -12,5 +15,6 @@ class WelcomeController < ApplicationController
       end
     end
   end
+
 end
 
