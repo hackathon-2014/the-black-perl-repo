@@ -13,12 +13,12 @@ class UserMailer < ActionMailer::Base
   end
 
 
-  def rental_request_email(rental)
-    @sender = current_user
-    @recipient = User.find(tool.user_id)
-    @group = Group.find(current_user.group_id)
+  def rental_request_email(rental,requester)
+    @sender = requester
+    @recipient = User.find(rental.user_id)
+    @group = Group.find(@sender.group_id)
     @tool = Tool.find(rental.tool_id)
-    @url  = "http://localhost:3000/rentals/" + rental.id
+    @url  = "http://localhost:3000/rentals/" + rental.id.to_s
     mail(to: @recipient.email, from: @sender.email, subject: 'Rental Request from' + @sender.name)
   end
 end
