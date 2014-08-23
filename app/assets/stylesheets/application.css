@@ -53,16 +53,15 @@
     width: 100%;
     margin-bottom: 15px;
 }
+button > a {
+    color: white;
+}
 
-a {
+button > a:hover {
     text-decoration: none;
     color: #ffffff;
 }
 
-a:hover {
-    text-decoration: none;
-    color: #ffffff;
-}
 
 .btn-homepage {
     width: 45%;
@@ -97,6 +96,22 @@ a:hover {
     color: #333;
 }
 
-.toolsList > a {
+.toolsList  a {
     color: #333;
+    text-decoration: none;
+}
+
+.usersList  a {
+    color: #333;
+    text-decoration: none;
+}
+
+.usersList  a:hover {
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+.toolsList  a:hover {
+    text-decoration: none;
+    color: dodgerblue;
 }
