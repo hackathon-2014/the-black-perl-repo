@@ -1,5 +1,9 @@
 <div class="row">
+
+<div class="col-xs-8 col-xs-offset-2">
+
 <% if user_signed_in? && current_user.group_id != nil %>
+
   <h1><%= @group.name %></h1>
   <p>Admin: <%= @admin.name %></p>
 
@@ -18,17 +22,20 @@
   <%= link_to('Edit registration', edit_user_registration_path) %>
 
   <h2>Members:</h2>
-  <ul>
+  <ul class="list-group">
     <% @members.each do |member| %>
-      <li><%= link_to member.name, group_user_path(@group, member.id)%></li>
+      <li class="list-group-item"><%= link_to member.name, group_user_path(@group, member.id)%></li>
     <% end %>
   </ul>
 
-  <%= link_to "Add a Tool", new_group_user_tool_path(@group, current_user), :method => "get" %>
+  <button class="btn btn-primary"><%= link_to "Add a Tool", new_group_user_tool_path(@group, current_user), :method => "get" %></button>
+
   <h2>Group Tools:</h2>
-  <ul>
+  <ul class="list-group toolsList">
     <% @categories.each do |category| %>
-      <li><%= link_to category.name, category_path(category.id)%></li>
+
+      <li class="list-group-item"><%= link_to category.name, category_path(category.id), class:"toolLink"%></li>
+
     <% end %>
 
   </ul>
@@ -38,9 +45,16 @@
   <%= link_to 'Add Group', new_group_path %>
 
 <% else %>
+<div class="jumbotron">
+  <h1>Welcome to ToolShed!</h1>
+  <img class="homepage-logo" src="../../assets/ToolShedLogo.png" alt="">
+  <button class="btn btn-primary btn-homepage">
   <%= link_to 'Register', new_user_registration_path %>
+  </button>
+  <button class="btn btn-primary btn-homepage">
   <%= link_to "Log in", new_session_path(resource_name) %>
-
+  </button>
+</div>
 <% end %>
 </div>
-
+</div>

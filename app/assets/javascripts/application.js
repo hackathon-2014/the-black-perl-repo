@@ -20,13 +20,16 @@ var signInReturnAlert;
 
 $(document).ready(function (){
 
-    if ($('.signInReturnSuccess').text() === ""){
-        $('.signInReturnSuccess').closest('.alert').toggleClass('hidden');
+    if ($('.signInReturnSuccess').text() == ""){
+        $('.signInReturnSuccess').closest('.alert').addClass('hidden');
     };
 
-    if ($('.signInReturnAlert').text() === ""){
-        $('.signInReturnAlert').closest('.alert').toggleClass('hidden');
+    if ($('.signInReturnAlert').text() == ""){
+        $('.signInReturnAlert').closest('.alert').addClass('hidden');
     };
 
+    if ($('.signInErrorReturn').text() == ""){
+        $('.signInErrorReturn').closest('.alert').addClass('hidden');
+    }
 
 });
