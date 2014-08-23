@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi, <%= @recipient.name %>!</h1>
+    <p>
+      <%= @sender.name %> would like to borrow your <%= @tool.name %>.<br>
+    </p>
+    <p>
+      To respond to this request, please <a href="<%= @url %>">click here</a>!
+    </p>
+    <p>Have a great day!</p>
+  </body>
+</html>
