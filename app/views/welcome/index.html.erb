@@ -28,10 +28,14 @@
   <%= link_to "Add a Tool", new_group_user_tool_path(@group, current_user), :method => "get" %>
   <h2>Group Tools:</h2>
   <ul>
-    <% @tools.each do |tool| %>
-      <li><%= tool.name %></li>
+    <% @categories.each do |category| %>
+      <li><%= category.name %></li>
     <% end %>
+
   </ul>
+<% else %>
+  <%= link_to 'Register', new_user_registration_path %>
+  <%= link_to "Log in", new_session_path(resource_name) %>
 
 <% end %>
 </div>
