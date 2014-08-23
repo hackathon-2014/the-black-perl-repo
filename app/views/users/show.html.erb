@@ -1,0 +1,11 @@
+<%= link_to "<< Back to Group", root_path %>
+
+
+<h2><%= @user.name %>'s Tools</h2>
+<ul>
+  <% Tool.all.each do |tool| %>
+    <% if tool.user_id == @user.id %>
+      <li><%= link_to tool.name, group_user_tool_path(@user.group_id, @user, tool) %></li>
+    <% end %>
+  <% end %>
+</ul>

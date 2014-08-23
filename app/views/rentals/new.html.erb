@@ -1,0 +1,8 @@
+<div>
+  <%= form_for @rental do |f| %>
+      <%= f.label :start_date, "Select Time" %>
+      <%= f.date_select :start_date %>
+      <br>
+      <%= f.submit %>
+  <% end %>
+</div>
