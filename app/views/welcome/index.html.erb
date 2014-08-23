@@ -33,7 +33,7 @@
 
   </ul>
 
-<% elsif %>
+<% elsif user_signed_in? && current_user.group_id == nil %>
 
   <%= link_to 'Add Group', new_group_path %>
 
