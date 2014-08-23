@@ -7,13 +7,17 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new({name: params[:name]})
+    @invites = params[:invites].split(",")
     @group.user_id = current_user.id #owner/admin
+    current_user.group_id = @group.id
     if @group.save
       flash[:notice] = 'Group was successfully created.'
       redirect_to group_path(@group)
+      UserMailer.invite_emails(@invites, @group).deliver
     else
       render :action => 'new'
     end
+
 
   end
 
