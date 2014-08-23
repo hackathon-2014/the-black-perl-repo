@@ -17,10 +17,6 @@ class GroupsController < ApplicationController
 
   end
 
-  def show
-    @admin = User.find(@group.user_id)
-  end
-
   def edit
 
   end
