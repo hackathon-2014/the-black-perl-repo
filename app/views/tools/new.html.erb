@@ -2,5 +2,8 @@
 <%= form_tag(group_user_tools_path(@group, current_user), method: "post" ) do %>
   <%= label_tag(:name, "Tool Name:") %>
   <%= text_field_tag(:name) %>
+
+  <%= label_tag(:category, "Category") %>
+  <%= select_tag 'category', options_from_collection_for_select(@categories,'id', 'name') %>
   <%= submit_tag("Submit") %>
 <% end %>

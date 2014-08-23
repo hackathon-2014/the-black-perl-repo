@@ -1,3 +1,4 @@
+<div class="signUpContainer col-xs-8 col-xs-offset-2">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -9,24 +10,25 @@
   <%= f.text_field :name, autofocus: true %></div>
 
   <div><%= f.label :email %><br />
-  <%= f.email_field :email%></div>
+
+  <%= f.email_field :email, class:"form-control" %></div>
 
   <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+    <%= f.password_field :password, autocomplete: "off", class:"form-control" %></div>
 
   <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %></div>
 
-  <div>
+  <div class="checkBox">
       <%= f.label :group_id %>
-      <%= f.select :group_id, options_for_select( all_groups.collect {|group| [group.name, group.id]} ) %>  
+
+      <%= f.select :group_id, options_for_select( all_groups.collect {|group| [group.name, group.id]} ) %>
 
   </div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up", class:"btn btn-primary" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
 
-
-
+</div>

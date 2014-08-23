@@ -13,11 +13,11 @@ class ToolsController < ApplicationController
 
   def new
     @tool = Tool.new
-
+    @categories = Category.all
   end
 
   def create
-    @tool = Tool.new({name: params[:name]})
+    @tool = Tool.new({name: params[:name], category_id: params[:category]})
     @tool.user_id = current_user.id
     if @tool.save
       redirect_to root_path
