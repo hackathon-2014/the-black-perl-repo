@@ -31,7 +31,7 @@ test:
   database: practice_test
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
