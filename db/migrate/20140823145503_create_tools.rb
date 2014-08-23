@@ -3,6 +3,7 @@ class CreateTools < ActiveRecord::Migration
     create_table :tools do |t|
       t.string :name
       t.references :user
+      t.integer :user_id
       t.text :image_url
       t.references :category
       t.boolean :checked_out?, default: false
