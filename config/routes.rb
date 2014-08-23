@@ -17,8 +17,9 @@ Rails.application.routes.draw do
 
   end
 
-  resources :reservations
+  resources :categories, only: [:show]
 
+  resources :reservations
 
 
 
