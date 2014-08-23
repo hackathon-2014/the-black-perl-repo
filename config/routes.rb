@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  reources :groups do
+  resources :groups do
 
     resources :users do
 
-      reources :tools do
+      resources :tools do
 
         get :transition
 
