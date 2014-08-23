@@ -18,7 +18,7 @@ class UserMailer < ActionMailer::Base
     @recipient = User.find(rental.user_id)
     @group = Group.find(@sender.group_id)
     @tool = Tool.find(rental.tool_id)
-    @url  = "http://localhost:3000/rentals/" + rental.id.to_s
+    @url  = "http://t00lshed.herokuapp.com/group/" + @group.id + "users/" + @recipient.id + "/tools/" + @tool.id + "/rentals/" + rental.id.to_s
     mail(to: @recipient.email, from: @sender.email, subject: 'Rental Request from' + @sender.name)
   end
 end
