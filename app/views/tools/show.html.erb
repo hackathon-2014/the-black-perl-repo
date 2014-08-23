@@ -1,0 +1,10 @@
+
+<div>
+  <%= "#{@user.name}'s #{@tool.name}" %>
+</div>
+<div>
+  <%= image_tag @tool.image_url, class: "tool-image" %>
+</div>
+<div>
+  <%= link_to "Request", new_rental_path, class: "btn btn-default" %>
+</div>

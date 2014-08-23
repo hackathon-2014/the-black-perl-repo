@@ -20,7 +20,7 @@
   <h2>Members:</h2>
   <ul>
     <% @members.each do |member| %>
-      <li><%= member.name %></li>
+      <li><%= link_to member.name, group_user_path(@group, member.id)%></li>
     <% end %>
   </ul>
 

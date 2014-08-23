@@ -28,7 +28,7 @@ groups.each do |group|
       pick = rand(0...tools.length)
       tool = tools[pick]
       tool.each do |category, name|
-        Tool.create(name: name, user_id: user.id, category_id: category, checked_out?: false)
+        Tool.create(name: name, user_id: user.id, category_id: category, checked_out?: false, image_url: "http://#{name.gsub(/ /, '_')}.jpg.to")
       end
     end
   end
