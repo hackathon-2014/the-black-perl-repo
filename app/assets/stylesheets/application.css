@@ -16,3 +16,16 @@
  *= require_self
 
  */
+
+.btn {
+    width: 100%;
+}
+
+.passwordInput, .emailInput {
+    width:100%;
+}
+
+.passwordField, .emailField, .rememberMeBox, .loginButton {
+    margin-top: 10px;
+}
+
