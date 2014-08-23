@@ -1,2 +1,6 @@
 <h2>Add a Tool</h2>
-<%= form_tag(group_user_tool_path(@group, current_user), method: "post" )
+<%= form_tag(group_user_tools_path(@group, current_user), method: "post" ) do %>
+  <%= label_tag(:name, "Tool Name:") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Submit") %>
+<% end %>
