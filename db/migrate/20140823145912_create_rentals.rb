@@ -5,7 +5,7 @@ class CreateRentals < ActiveRecord::Migration
       t.references :tool
       t.date :start_date
       t.date :end_date
-      t.timestamp
+      t.timestamps
     end
   end
 end
