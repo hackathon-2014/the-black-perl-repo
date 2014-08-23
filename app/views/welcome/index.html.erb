@@ -1,5 +1,5 @@
 <div class="row">
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.group_id != nil %>
   <h1><%= @group.name %></h1>
   <p>Admin: <%= @admin.name %></p>
 
@@ -32,6 +32,11 @@
     <% end %>
 
   </ul>
+
+<% elsif user_signed_in? && current_user.group_id == nil %>
+
+  <%= link_to 'Add Group', new_group_path %>
+
 <% else %>
   <%= link_to 'Register', new_user_registration_path %>
   <%= link_to "Log in", new_session_path(resource_name) %>
