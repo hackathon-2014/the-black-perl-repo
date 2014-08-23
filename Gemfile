@@ -31,6 +31,10 @@ gem 'rails_12factor', group: :production
 
 gem 'devise'
 gem "cancan"
+gem 'workflow'
+gem 'faker'
+gem 'pry-rails'
+
 
 # ruby "2.1.1"
 
