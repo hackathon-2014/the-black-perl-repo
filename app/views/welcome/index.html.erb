@@ -19,24 +19,31 @@
   <%= link_to('Edit registration', edit_user_registration_path) %>
 
   <h2>Members:</h2>
-  <ul>
+  <ul class="list-group">
     <% @members.each do |member| %>
-      <li><%= member.name %></li>
+      <li class="list-group-item"><%= member.name %></li>
     <% end %>
   </ul>
 
-  <%= link_to "Add a Tool", new_group_user_tool_path(@group, current_user), :method => "get" %>
+  <button class="btn btn-primary"><%= link_to "Add a Tool", new_group_user_tool_path(@group, current_user), :method => "get" %></button>
   <h2>Group Tools:</h2>
-  <ul>
+  <ul class="list-group">
     <% @categories.each do |category| %>
-      <li><%= category.name %></li>
+      <li class="list-group-item"><%= category.name %></li>
     <% end %>
 
   </ul>
 <% else %>
+<div class="jumbotron">
+  <h1>Welcome to ToolShed!</h1>
+  <img class="homepage-logo" src="../../assets/ToolShedLogo.png" alt="">
+  <button class="btn btn-primary btn-homepage">
   <%= link_to 'Register', new_user_registration_path %>
+  </button>
+  <button class="btn btn-primary btn-homepage">
   <%= link_to "Log in", new_session_path(resource_name) %>
-
+  </button>
+</div>
 <% end %>
 </div>
  </div>

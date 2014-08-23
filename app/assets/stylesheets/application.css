@@ -44,3 +44,33 @@
 .checkBox {
     margin-bottom: 15px;
 }
+
+#category {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btn-homepage {
+    width: 45%;
+}
+
+.homepage-logo {
+    width: 75%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.jumbotron {
+    text-align: center;
+    margin-top: 25px;
+}
