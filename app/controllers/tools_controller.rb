@@ -1,6 +1,7 @@
 class ToolsController < ApplicationController
 
-  before_action :find_tool, only: [:show, :edit, :update, :destroy, :transition] 
+  before_action :find_tool, only: [:show, :edit, :update, :destroy, :transition]
+  before_action :find_group, only: [:new, :create]
 
   def index
     @tools = @group.users.tools.where params[:category_id]
@@ -11,15 +12,22 @@ class ToolsController < ApplicationController
   end
 
   def new
+    @tool = Tool.new
 
   end
 
   def create
-    
+    @tool = Tool.new({name: params[:name]})
+    @tool.user_id = current_user.id
+    if @tool.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
-    
+
   end
 
   def update
@@ -38,15 +46,15 @@ class ToolsController < ApplicationController
   private
 
   def find_tool
-    @tool = Tool.find params[:id]
+    @tool = Tool.find(params[:id])
   end
 
   def find_user
-    @user = User.find params[:id]
+    @user = User.find(params[:user_id])
   end
 
   def find_group
-    @group = Group.find params[:id]
+    @group = Group.find(params[:group_id])
   end
 
   def tool_params

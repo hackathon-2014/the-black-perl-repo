@@ -23,7 +23,19 @@ class Tool < ActiveRecord::Base
   #     event :pay, transitions_to: :billing
   #   end
 
-  #  
+
+  #   state :surgery do
+  #     event :examine, transitions_to: :checkup
+  #     event :scan, transitions_to: :xray
+  #     event :pay, transitions_to: :billing
+  #   end
+
+  #   state :billing do
+  #     event :leave, transitions_to: :discharge
+  #   end
+
+  #   state :discharge
+#
 
   # end
 end

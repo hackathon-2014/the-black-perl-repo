@@ -19,12 +19,12 @@ end
 
 categories = Category.create([{name: "Power Tools"}, {name: "Hand Tools"}, {name: "Lawncare"}, {name: "Safety"}, {name: "Painting"}])
 
-tools = [{}] 
+tools = [{}]
 
 
-groups.each do |group|
-  group.users.each do |user|
-    for i in 0..rand(1..7)
-      Tool.create(name: , user_id: user.id, category_id: )
-  end
-end
+# groups.each do |group|
+#   group.users.each do |user|
+#     for i in 0..rand(1..7)
+#       Tool.create(name: , user_id: user.id, category_id: )
+#   end
+# end

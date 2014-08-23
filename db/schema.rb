@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823165030) do
+ActiveRecord::Schema.define(version: 20140823184747) do
 
   create_table "categories", force: true do |t|
     t.string "name"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140823165030) do
 
   create_table "tools", force: true do |t|
     t.string  "name"
-    t.integer "user_id_id"
+    t.integer "user_id"
     t.text    "image_url"
     t.integer "category_id"
     t.boolean "checked_out?", default: false
