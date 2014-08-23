@@ -24,6 +24,7 @@
 
       <%= f.select :group_id, options_for_select( all_groups.collect {|group| [group.name, group.id]} ), :include_blank => "Create a New Group" %>
 
+
   </div>
 
   <div><%= f.submit "Sign up", class:"btn btn-primary" %></div>
