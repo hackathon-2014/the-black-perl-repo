@@ -1,0 +1,9 @@
+<%= link_to "<< Back to Group", root_path %>
+
+
+<h2><%= @category.name %> for <%= @group.name %></h2>
+<ul>
+  <% @tools.each do |tool| %>
+    <li><%= tool.name %></li>
+  <% end %>
+</ul>
