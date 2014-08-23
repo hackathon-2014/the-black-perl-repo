@@ -31,12 +31,11 @@ ActiveRecord::Schema.define(version: 20140823145912) do
 
   create_table "tools", force: true do |t|
     t.string  "name"
-    t.integer "user_id_id"
+    t.integer "user_id"
     t.text    "image_url"
     t.integer "category_id"
     t.boolean "checked_out?", default: false
   end
-
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
