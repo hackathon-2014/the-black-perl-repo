@@ -21,11 +21,11 @@ var signInReturnAlert;
 $(document).ready(function (){
 
     if ($('.signInReturnSuccess').text() === ""){
-        $('.signInReturnSuccess').closest('.alert').toggleClass('hidden');
+        $('.signInReturnSuccess').closest('.alert').addClass('hidden');
     };
 
     if ($('.signInReturnAlert').text() === ""){
-        $('.signInReturnAlert').closest('.alert').toggleClass('hidden');
+        $('.signInReturnAlert').closest('.alert').addClass('hidden');
     };
 
 
