@@ -2,5 +2,38 @@ class Tool < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_one :rental
-  has_and_belongs_to_many :users, through: :rentals
+  has_one :user, through: :rental
+
+  include Workflow
+
+  workflow do
+
+    state :available do
+      event :check_out, transitions_to: :checked_out
+      event :reserve, transitions_to: :reserved
+    end
+
+    state :checked_out do
+      event :return, transitions_to: :available
+    end
+
+    state :reserved do
+      event :examine, transitions_to: :checkup
+      event :operate, transitions_to: :surgery
+      event :pay, transitions_to: :billing
+    end
+
+    state :surgery do
+      event :examine, transitions_to: :checkup
+      event :scan, transitions_to: :xray
+      event :pay, transitions_to: :billing
+    end
+
+    state :billing do
+      event :leave, transitions_to: :discharge
+    end
+
+    state :discharge
+
+  end
 end

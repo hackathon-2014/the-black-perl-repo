@@ -3,6 +3,21 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  resources :groups do
+
+    resources :users do
+
+      resources :tools do
+
+        get :transition
+
+      end
+
+    end
+
+  end
+
+
 
 
 end
