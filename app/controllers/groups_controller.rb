@@ -11,9 +11,13 @@ class GroupsController < ApplicationController
     @group.user_id = current_user.id #owner/admin
     current_user.group_id = @group.id
     if @group.save
+      current_user.update_attributes({group_id: @group.id})
       flash[:notice] = 'Group was successfully created.'
-      redirect_to group_path(@group)
+
+      redirect_to root_path
+
       UserMailer.invite_emails(@invites, @group).deliver
+
     else
       render :action => 'new'
     end
