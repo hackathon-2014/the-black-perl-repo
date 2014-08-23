@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   end
 
-
+  resources :categories, only: [:show]
 
 
 end

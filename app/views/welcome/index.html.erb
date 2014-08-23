@@ -28,10 +28,11 @@
   <h2>Group Tools:</h2>
   <ul>
     <% @categories.each do |category| %>
-      <li><%= category.name %></li>
+      <li><%= link_to category.name, category_path(category.id)%></li>
     <% end %>
 
   </ul>
 
 <% end %>
- </div>
+</div>
+
