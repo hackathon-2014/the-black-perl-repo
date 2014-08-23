@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20140823145912) do
     t.boolean "checked_out?", default: false
   end
 
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
