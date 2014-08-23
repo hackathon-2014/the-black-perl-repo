@@ -74,3 +74,25 @@ a:hover {
     text-align: center;
     margin-top: 25px;
 }
+
+.toolLink {
+    color: #333;
+}
+
+.toolLink:hover {
+    color: dodgerblue;
+}
+
+.back-btn {
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.nav-li > a {
+    color: #333;
+}
+
+.toolsList > a {
+    color: #333;
+}

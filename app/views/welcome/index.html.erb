@@ -26,11 +26,12 @@
   </ul>
 
   <button class="btn btn-primary"><%= link_to "Add a Tool", new_group_user_tool_path(@group, current_user), :method => "get" %></button>
+
   <h2>Group Tools:</h2>
-  <ul class="list-group">
+  <ul class="list-group toolsList">
     <% @categories.each do |category| %>
 
-      <li class="list-group-item"><%= link_to category.name, category_path(category.id)%></li>
+      <li class="list-group-item"><%= link_to category.name, category_path(category.id), class:"toolLink"%></li>
 
     <% end %>
 
