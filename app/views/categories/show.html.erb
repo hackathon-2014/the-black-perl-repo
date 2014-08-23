@@ -8,6 +8,6 @@
 <h2><%= @category.name %> for <%= @group.name %></h2>
 <ul>
   <% @tools.each do |tool| %>
-    <li><%= tool.name %></li>
+    <li><%= link_to tool.name, group_user_tool_path(@group, tool.user_id, tool) %></li>
   <% end %>
 </ul>

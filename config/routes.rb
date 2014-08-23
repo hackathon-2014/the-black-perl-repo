@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
       resources :tools do
 
-        get :transition
+        resources :rentals
 
       end
 
@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
   end
 
+
+
+
   resources :categories, only: [:show]
 
-  resources :reservations
 
 
 

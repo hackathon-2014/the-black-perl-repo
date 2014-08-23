@@ -21,7 +21,7 @@
   <h2>Members:</h2>
   <ul class="list-group">
     <% @members.each do |member| %>
-      <li class="list-group-item"><%= member.name %></li>
+      <li class="list-group-item"><%= link_to member.name, group_user_path(@group, member.id)%></li>
     <% end %>
   </ul>
 

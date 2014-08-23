@@ -17,6 +17,10 @@
 
  */
 
+ .tool-image {
+    width: 200px;
+ }
+
 .btn {
     width: 100%;
 }

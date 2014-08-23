@@ -1,7 +1,8 @@
 class ToolsController < ApplicationController
 
   before_action :find_tool, only: [:show, :edit, :update, :destroy, :transition]
-  before_action :find_group, only: [:new, :create]
+  before_action :find_user
+  before_action :find_group, only: [:new, :create, :show]
 
   def index
     @tools = @group.users.tools.where params[:category_id]
