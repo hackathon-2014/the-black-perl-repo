@@ -12,3 +12,9 @@
     <p>world again</p>
   </div>
 </div>
+
+<% if user_signed_in? %>
+  <%= link_to "Create a Group!", "groups/new"%>
+<% else %>
+  <p>Please sign in to create a group!</p>
+<% end %>
