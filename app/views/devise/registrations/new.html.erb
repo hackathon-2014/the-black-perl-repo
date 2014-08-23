@@ -12,7 +12,15 @@
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
+  <div>
+      <%= f.label :group_id %>
+      <%= f.select :group_id, options_for_select( all_groups.collect {|group| [group.name]} ) %>  
+  </div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+    
