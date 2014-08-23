@@ -4,17 +4,22 @@
 
 <% if user_signed_in? && current_user.group_id != nil %>
 
+
   <h1><%= @group.name %></h1>
   <p>Admin: <%= @admin.name %></p>
 
   <% if current_user === @admin %>
     <p>Edit your group</p>
     <%= form_tag('/groups/' + @group.id.to_s + '/edit', method: "get") do %>
+     <button class="btn btn-primary btn-homepage"
       <%= submit_tag("Update")%>
+      </button>
     <% end %>
     <p>Delete your group</p>
     <%= form_tag('/groups/' + @group.id.to_s, method: "delete") do %>
+     <button class="btn btn-primary btn-homepage">
       <%= submit_tag("Delete")%>
+      </button>
     <% end %>
   <% end %>
 
@@ -22,7 +27,7 @@
   <%= link_to('Edit registration', edit_user_registration_path) %>
 
   <h2>Members:</h2>
-  <ul class="list-group">
+  <ul class="list-group usersList">
     <% @members.each do |member| %>
       <li class="list-group-item"><%= link_to member.name, group_user_path(@group, member.id)%></li>
     <% end %>
