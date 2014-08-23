@@ -29,3 +29,18 @@
     margin-top: 10px;
 }
 
+.hidden {
+    display: none;
+}
+
+.alert {
+    margin-top: 10px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.checkBox {
+    margin-bottom: 15px;
+}
