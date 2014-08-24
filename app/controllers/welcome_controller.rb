@@ -22,12 +22,16 @@ class WelcomeController < ApplicationController
         end
       end
   
-    # narrowing down categories to group's totals and only listed once
+      # narrowing down categories to group's totals and only listed once
       @categories = []
       @tools.each do |tool|
         category = Category.find(tool.category_id)
         @categories.push(category) unless @categories.include?(category)
       end
+
+     
+          
+
     end
   end
 

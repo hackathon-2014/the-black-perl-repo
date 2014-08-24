@@ -2,8 +2,10 @@
 <h2>Rent <%= @user.name %>'s <%= @tool.name %></h2>
 <div>
   <%= form_for [@group,@user,@tool,@rental] do |f| %>
-      <%= f.label :start_date, "Select Time" %>
+
+      <%= f.label :start_date, "Select Date" %>
       <%= f.date_select :start_date, :class=>"form-control"%>
+
       <br>
       <%= f.submit "Submit Request", :class=>"btn btn-primary tools-button"%>
   <% end %>

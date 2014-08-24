@@ -8,13 +8,14 @@ class RentalsController < ApplicationController
   end
 
   def create
-    @rental = Rental.create({
-      user_id: params[:user_id],
-      tool_id: params[:tool_id],
-      start_date: params[:start_date]
-      })
-    if @rental.save
-      UserMailer.rental_request_email(@rental,current_user).deliver
+
+    @tool = Tool.find params[:tool_id]
+    @rental = Rental.create rental_params
+    @rental.tool_id = @tool.id
+    @rental.user_id = current_user.id
+    if @rental.save == true
+      # UserMailer.rental_request_email(@rental,current_user).deliver
+      flash[:notice] = 'Rental request was successfully sent.'
       redirect_to root_path
     else
       render :new
