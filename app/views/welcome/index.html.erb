@@ -47,11 +47,13 @@
 
   <h2>Current Rentals:</h2>
   <ul class="list-group toolsList">
-    <% current_user.rentals.each do |rental| %>
-      <% id = rental.tool.user_id %>
-      <% owner = User.find(id) %>
-      <li class="list-group-item"><%= "#{owner.name}'s #{rental.tool.name}"%><span><%= " #{if rental.confirmed? == false then 'Requested' else 'Confirmed' end}" %></span></li>
+    <% if current_user.rentals %>
+      <% current_user.rentals.each do |rental| %>
+        <% id = rental.tool.user_id %>
+        <% owner = User.find(id) %>
+        <li class="list-group-item"><%= "#{owner.name}'s #{rental.tool.name}"%><span><%= " #{if rental.confirmed? == false then 'Requested' else 'Confirmed' end}" %></span></li>
 
+      <% end %>
     <% end %>
 
   </ul>
