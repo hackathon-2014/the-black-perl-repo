@@ -19,7 +19,7 @@ end
 
 categories = Category.create([{name: "Power Tools"}, {name: "Hand Tools"}, {name: "Lawncare"}, {name: "Painting"}])
 
-tools = [{ 1 => "Drill"}, { 2 => "Hammer"}, { 3 => "Weed Wacker"}, { 4 => "Roller"}]
+tools = [{ 1 => "Drill"}, { 2 => "Hammer"}, { 3 => "Weed Wacker"}, { 4 => "Paint Roller"}, { 2 => "Shovel"}, { 1 => "Chainsaw"}, { 3 => "Lawnmower"}, { 4 => "Paintbrush"}, { 1 => "Circular Saw"}, { 2 => "Screwdriver"}, { 3 => "Pesticide"}, { 4 => "Primer"}]
 
 
 groups.each do |group|

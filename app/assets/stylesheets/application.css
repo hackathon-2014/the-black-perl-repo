@@ -64,7 +64,7 @@ button > a:hover {
 
 
 .btn-homepage {
-    width: 45%;
+    margin-top: 15px;
 }
 
 .homepage-logo {
@@ -127,5 +127,4 @@ button input {
 
 .tools-button {
     margin-top: 25px;
-};
 }
