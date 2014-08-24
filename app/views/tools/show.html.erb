@@ -1,10 +1,15 @@
 
-<div>
+<div class="col-xs-8 col-xs-offset-2">
+
+<h2>
   <%= "#{@user.name}'s #{@tool.name}" %>
-</div>
+</h2>
 <div>
   <%= image_tag @tool.image_url, class: "tool-image" %>
 </div>
 <div>
-  <%= link_to "Request", new_group_user_tool_rental_path(@group, @user, @tool), class: "btn btn-default" %>
+  <%= link_to "Request", new_group_user_tool_rental_path(@group, @user, @tool), class: "btn btn-default btn-primary" %>
+</div>
+
+</div>
 </div>
