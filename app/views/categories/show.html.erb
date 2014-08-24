@@ -4,10 +4,13 @@
 
 </ul>
 
+<div class="col-xs-8 col-xs-offset-2">
 
 <h2><%= @category.name %> for <%= @group.name %></h2>
-<ul>
+<ul class="list-group toolsList">
   <% @tools.each do |tool| %>
-    <li><%= link_to tool.name, group_user_tool_path(@group, tool.user_id, tool) %></li>
+    <li class="list-group-item"><%= link_to tool.name, group_user_tool_path(@group, tool.user_id, tool) %></li>
   <% end %>
 </ul>
+
+</div>
