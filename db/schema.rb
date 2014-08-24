@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823192005) do
+ActiveRecord::Schema.define(version: 20140823234224) do
 
   create_table "categories", force: true do |t|
     t.string "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140823192005) do
     t.integer "tool_id"
     t.date    "start_date"
     t.date    "end_date"
+    t.boolean "confirmed?", default: false
   end
 
   create_table "reservations", force: true do |t|
