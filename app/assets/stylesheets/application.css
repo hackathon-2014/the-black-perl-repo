@@ -115,3 +115,17 @@ button > a:hover {
     text-decoration: none;
     color: dodgerblue;
 }
+
+.btn-new-group {
+    margin-top: 25px;
+}
+
+button input {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.tools-button {
+    margin-top: 25px;
+};
+}

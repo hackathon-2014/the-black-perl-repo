@@ -1,6 +1,8 @@
+<div class="col-xs-8 col-xs-offset-2">
 <h1>Edit <%= @group.name %></h1>
 <%= form_tag(group_path(@group), method: "put") do %>
   <%= label_tag(:name, "Group Name:") %>
-  <%= text_field_tag(:name) %>
-  <%= submit_tag("Submit") %>
+  <%= text_field_tag(:name, nil, :class=>"form-control") %>
+  <%= submit_tag("Submit", :class=>"form-control btn-primary") %>
 <% end %>
+</div>

@@ -11,15 +11,14 @@
   <% if current_user === @admin %>
     <p>Edit your group</p>
     <%= form_tag('/groups/' + @group.id.to_s + '/edit', method: "get") do %>
-     <button class="btn btn-primary btn-homepage"
-      <%= submit_tag("Update")%>
-      </button>
+
+      <%= submit_tag("Update", :class=>"form-control btn-primary")%>
+
     <% end %>
     <p>Delete your group</p>
     <%= form_tag('/groups/' + @group.id.to_s, method: "delete") do %>
-     <button class="btn btn-primary btn-homepage">
-      <%= submit_tag("Delete")%>
-      </button>
+
+      <%= submit_tag("Delete", :class=>"form-control btn-primary")%>
     <% end %>
   <% end %>
 
@@ -60,7 +59,9 @@
 
 <% elsif user_signed_in? && current_user.group_id == nil %>
 
+<button class="btn btn-primary btn-new-group">
   <%= link_to 'Add Group', new_group_path %>
+</button>
 
 <% else %>
 <div class="jumbotron">
